@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจัดตารางสอนอัจฉริยะ | Smart Schedule</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Anuphan:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="hero-section">
+            <h1>จัดตารางสอน<span>อัจฉริยะ</span></h1>
+            <p>ออกแบบตารางเรียนของคุณให้สวยงามและเป็นระเบียบ</p>
+        </header>
+
+        <section class="controls-card">
+            <form id="schedule-form" class="input-grid">
+                <div class="input-group">
+                    <label for="subject">วิชา</label>
+                    <input type="text" id="subject" placeholder="เช่น คณิตศาสตร์" required>
+                </div>
+                <div class="input-group">
+                    <label for="day">วัน</label>
+                    <select id="day" required>
+                        <option value="Monday">จันทร์</option>
+                        <option value="Tuesday">อังคาร</option>
+                        <option value="Wednesday">พุธ</option>
+                        <option value="Thursday">พฤหัสบดี</option>
+                        <option value="Friday">ศุกร์</option>
+                        <option value="Saturday">เสาร์</option>
+                        <option value="Sunday">อาทิตย์</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="start-time">เริ่ม</label>
+                    <input type="time" id="start-time" required>
+                </div>
+                <div class="input-group">
+                    <label for="end-time">เลิก</label>
+                    <input type="time" id="end-time" required>
+                </div>
+                <div class="input-group">
+                    <label for="color">สีของวิชา</label>
+                    <input type="color" id="color" value="#6366f1">
+                </div>
+                <button type="submit" class="btn btn-primary">เพิ่มลงตาราง</button>
+            </form>
+            <div class="action-buttons">
+                <button id="clear-btn" class="btn btn-outline">ล้างตาราง</button>
+                <button id="print-btn" class="btn btn-secondary">พิมพ์ตาราง (PDF)</button>
+            </div>
+        </section>
+
+        <section class="schedule-view">
+            <div class="table-container">
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>เวลา</th>
+                            <th>จันทร์</th>
+                            <th>อังคาร</th>
+                            <th>พุธ</th>
+                            <th>พฤหัสบดี</th>
+                            <th>ศุกร์</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body">
+                        <!-- Dynamic content here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
